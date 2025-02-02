@@ -28,32 +28,33 @@ function App() {
       {/* Hero Section */}
       <section className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden">
         <motion.div 
-          className="z-10 text-center px-4 mb-12"
+          className="z-10 text-center px-4 mb-8" // Reduced bottom margin
           style={{ scale }}
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="pt-16 md:pt-0" // Added padding top for mobile
           >
             <motion.div 
-              className="flex items-center justify-center mb-6"
+              className="flex items-center justify-center mb-4" // Reduced margin bottom
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             >
-              <Rocket className="w-12 h-12 text-indigo-400" />
+              <Rocket className="w-10 h-10 md:w-12 md:h-12 text-indigo-400" /> {/* Slightly smaller on mobile */}
             </motion.div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-              Coming Soon
+            <h1 className="text-4xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+              TechMarco
             </h1>
-            <p className="text-xl md:text-2xl text-indigo-100 max-w-2xl mx-auto">
-              We're crafting something amazing. Our innovative products will revolutionize the way you work.
+            <p className="text-lg md:text-2xl text-indigo-100 max-w-2xl mx-auto">
+              Technology that Makes A Real Change Online - where innovation meets impact, transforming the digital landscape one solution at a time.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsProductsModalOpen(true)}
-              className="mt-8 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full text-white font-semibold flex items-center justify-center mx-auto space-x-2 transition-colors"
+              className="mt-6 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-full text-white font-semibold flex items-center justify-center mx-auto space-x-2 transition-colors"
             >
               <Package className="w-5 h-5" />
               <span>View Products</span>
@@ -64,20 +65,20 @@ function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="mt-12"
+            className="mt-8" // Reduced margin top
           >
             <ChevronDown className="w-8 h-8 mx-auto animate-bounce text-indigo-400" />
           </motion.div>
         </motion.div>
 
         {/* Features Section */}
-        <div className="w-full max-w-6xl mx-auto px-4 mt-12">
+        <div className="w-full max-w-6xl mx-auto px-4 mt-6"> {/* Reduced margin top */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8" // Reduced gap on mobile
           >
             {[
               { title: "Innovation", description: "Cutting-edge technology that sets new industry standards" },
@@ -87,7 +88,7 @@ function App() {
               <motion.div
                 key={index}
                 whileHover={{ y: -5 }}
-                className="bg-white/5 backdrop-blur-lg p-6 rounded-xl border border-indigo-500/20"
+                className="bg-white/5 backdrop-blur-lg p-4 md:p-6 rounded-xl border border-indigo-500/20" // Reduced padding on mobile
               >
                 <h3 className="text-xl font-bold mb-2 text-indigo-300">{feature.title}</h3>
                 <p className="text-indigo-100">{feature.description}</p>
@@ -97,7 +98,7 @@ function App() {
         </div>
 
         {/* Footer */}
-        <footer className="w-full py-8 text-center text-indigo-300 mt-12">
+        <footer className="w-full py-6 text-center text-indigo-300 mt-8"> {/* Reduced margins */}
           <p>&copy; {new Date().getFullYear()}. All rights reserved.</p>
         </footer>
 
